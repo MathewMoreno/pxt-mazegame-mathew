@@ -1,3 +1,9 @@
+namespace SpriteKind {
+    export const Border = SpriteKind.create()
+}
+sprites.onOverlap(SpriteKind.Food, SpriteKind.Border, function (sprite, otherSprite) {
+    otherSprite.setPosition(Math.randomRange(0, 512), Math.randomRange(0, 512))
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     for (let index = 0; index < 6; index++) {
